@@ -104,7 +104,7 @@ rm *.o
 if [[ $hostid = mcx1 ]]; then
     git checkout nvidiaomp
 fi
-make
+#make
 cd ../../
 
 #------------------------------------------------------------------------------
@@ -154,6 +154,10 @@ elif [[ $hostid = zodiac ]]; then
 elif [[ $hostid = dayu ]]; then
   echo -e "Run MCXCL Benchmarking on $hostid\n" | tee -a  ${outputkey}_${hostid}
   devid_array=(100)   # Intel HD 520 GPU
+
+elif [[ $hostid = pangu ]]; then
+  echo -e "Run MCXCL Benchmarking on $hostid\n" | tee -a  ${outputkey}_${hostid}
+  devid_array=(100)   # AMD VEGA 64
 
 elif [[ $hostid = zen ]]; then
   echo -e "Run MCXCL Benchmarking on $hostid\n" | tee -a  ${outputkey}_${hostid}
